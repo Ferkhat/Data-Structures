@@ -1,3 +1,5 @@
+package rope;
+
 import java.util.Iterator;
 
 public class RopeString implements Iterable{

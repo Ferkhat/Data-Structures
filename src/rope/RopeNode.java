@@ -1,3 +1,5 @@
+package rope;
+
 public class RopeNode {
 
     private RopeNode left, right;
