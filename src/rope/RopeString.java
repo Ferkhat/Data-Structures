@@ -1,8 +1,6 @@
 package rope;
 
 import java.util.Iterator;
-import java.util.List;
-import java.util.Stack;
 
 public class RopeString implements Iterable{
 
@@ -49,64 +47,7 @@ public class RopeString implements Iterable{
      * @param i
      * @return A RopeString object that represents the right side of the split
      */
-//    public RopeString split(int i){
-//
-//        // Finding the relevant node to split at
-//        Stack<RopeNode> nodeStack = new Stack<>();
-//        RopeNode curr = this.root;
-//        int idx = i;
-//        while(!curr.isLeaf()){
-//            if(curr.getWeight() < idx){
-//                idx -= curr.getWeight();
-//                curr = curr.getRight();
-//            } else {
-//
-//                curr = curr.getLeft();
-//            }
-//        }
-//
-//        // curr is now the leaf node and idx points to the relevant character index
-//        if(idx == curr.getString().length()-1){ //idx points to last character
-//            // do nothing for now..
-//        } else {
-//            RopeNode nLeft = new RopeNode(curr.getString().substring(0, idx+1));
-//            RopeNode nRight = new RopeNode(curr.getString().substring(idx+1));
-//            curr.setLeft(nLeft);
-//            curr.setRight(nRight);
-//            curr.setWeight(idx+1);
-//            curr.setString("");
-//        }
-//
-//
-//
-//        return null; // TODO
-//    }
-
-//    private RopeNode[] splitAux(int i, RopeNode curr, RopeNode right){
-//        if(curr.isLeaf()){
-//            if(i <= curr.getWeight()){
-//                RopeNode l, r;
-//                l = new RopeNode(curr.getString().substring(0, i));
-//                r = new RopeNode(curr.getString().substring(i, curr.getWeight()));
-//                curr.setChildren(l,null);
-//                return new RopeNode[] {curr, r};
-//            } else {
-//                return new RopeNode[] {curr, null};
-//            }
-//        } else {
-//            if(curr.getWeight() < i){
-//                RopeNode pair[];
-//                pair = splitAux(i - curr.getWeight(), curr.getRight());
-//                curr.setRight(pair[0]);
-//                return new RopeNode[] {curr, pair[1]};
-//            } else {
-//
-//            }
-//        }
-//    }
-
-
-    public RopeNode[] split(int i){
+public RopeNode[] split(int i){
         RopeNode left;
         RopeNode right = new RopeNode();
         left = splitAux(i, root, right);
