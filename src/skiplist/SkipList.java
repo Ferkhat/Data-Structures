@@ -73,4 +73,9 @@ public class SkipList<T extends Comparable<T>> {
         }
         return newLevel;
     }
+
+
+    public T remove(T key){
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
 }
